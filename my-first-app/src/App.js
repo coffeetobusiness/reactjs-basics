@@ -18,7 +18,7 @@ function App() {
              }
            } />
       This is {name} application
-      <InputComp />
+      {/* <InputComp /> */}
       
     </div>
   );
