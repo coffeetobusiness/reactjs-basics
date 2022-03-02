@@ -11,13 +11,13 @@ function App() {
   
   return (
     <div className="App">
-       <input type={'name'} name='name' 
+       {/* <input type={'name'} name='name' 
            onChange={
              (e) => {
                setName(e.target.value)
              }
            } />
-      This is {name} application
+      This is {name} application */}
       <InputComp />
       
     </div>

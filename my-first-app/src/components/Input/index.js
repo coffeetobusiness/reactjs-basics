@@ -1,29 +1,50 @@
 import React from "react";
 
 
-let newValue = 'New Variable'
 // component
 class Input extends React.Component{
     state = {
-        value: 'Nothing'
+        // inputValue:"Meri Value",
+        count: 0
     }
 
-    handleChange = (e) => {
-        this.setState({
-            value: e.target.value
-        })
-        // newValue = e.target.value
+    // handleSubtractChange = (event) => {
+    //     let newValue = this.state.count - 1
+    //     this.setState({count: newValue})
+    // }
 
-        // console.log(newValue, this.state.value)
-    } 
+    // handleAddChange = (event) => {
+    //     let newValue = this.state.count + 1
+    //     this.setState({count: newValue})
+    // }
+
+    handleChange = (type) => {
+        let newValue = this.state.count
+        if(type === 'add'){
+            newValue++
+        }else{
+            newValue--
+        }
+        this.setState({count: newValue})
+    }
 
     render(){
        
         return <div>
-           <input type={'name'} name='name' 
+           {/* <input type={'name'} name='name' 
            onChange={this.handleChange} />
-        <p>State Value => {this.state.value}</p>
-        <p>Variable => {newValue}</p>
+            <p>State Value => {this.state.inputValue}</p> */}
+
+
+            <div>
+                <button onClick={
+                    (e) => this.handleChange('add')            }>Add</button>
+                    {this.state.count}
+                <button onClick={() => {
+                    this.handleChange('sub')
+                    }}>Subtract</button>
+            </div>
+        
         </div>
     }
 }
